@@ -1,0 +1,9 @@
+name: 'twitter_organic_source'
+version: '0.1.0'
+config-version: 2
+require-dbt-version: ">=0.20.0"
+
+vars:
+  account_history: "{{ source('twitter_organic','account_history') }}"
+  organic_tweet_report: "{{ source('twitter_organic','organic_tweet_report') }}"
+  tweet: "{{ source('twitter_organic','tweet') }}"
