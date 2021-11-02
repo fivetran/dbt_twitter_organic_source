@@ -47,6 +47,10 @@ final as (
         truncated,
         tweet_type,
         user_id
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='twitter_organic_union_schemas', 
+            union_database_variable='twitter_organic_union_databases') 
+        }}
     from fields
 )
 

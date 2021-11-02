@@ -1,1 +1,12 @@
-select * from {{ var('tweet') }}
+{{
+    fivetran_utils.union_data(
+        table_identifier='tweet', 
+        database_variable='twitter_organic_database', 
+        schema_variable='twitter_organic_schema', 
+        default_database=target.database,
+        default_schema='twitter_organic',
+        default_variable='tweet',
+        union_schema_variable='twitter_organic_union_schemas',
+        union_database_variable='twitter_organic_union_databases'
+    )
+}}

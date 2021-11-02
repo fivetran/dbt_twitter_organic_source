@@ -52,6 +52,10 @@ final as (
         video_views_25,
         video_views_50,
         video_views_75
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='twitter_organic_union_schemas', 
+            union_database_variable='twitter_organic_union_databases') 
+        }}
     from fields
 )
 
