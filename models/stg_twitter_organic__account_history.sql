@@ -15,6 +15,11 @@ fields as (
                 staging_columns=get_account_history_columns()
             )
         }}
+
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='twitter_organic_union_schemas', 
+            union_database_variable='twitter_organic_union_databases') 
+        }}
         
     from base
 ),
@@ -31,11 +36,8 @@ final as (
         industry_type,
         name as account_name,
         timezone,
-        updated_at as updated_timestamp
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='twitter_organic_union_schemas', 
-            union_database_variable='twitter_organic_union_databases') 
-        }}
+        updated_at as updated_timestamp,
+        source_relation
     from fields
 ),
 

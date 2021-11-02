@@ -15,6 +15,11 @@ fields as (
                 staging_columns=get_tweet_columns()
             )
         }}
+
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='twitter_organic_union_schemas', 
+            union_database_variable='twitter_organic_union_databases') 
+        }}
         
     from base
 ),
@@ -46,11 +51,8 @@ final as (
         source,
         truncated,
         tweet_type,
-        user_id
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='twitter_organic_union_schemas', 
-            union_database_variable='twitter_organic_union_databases') 
-        }}
+        user_id,
+        source_relation
     from fields
 )
 

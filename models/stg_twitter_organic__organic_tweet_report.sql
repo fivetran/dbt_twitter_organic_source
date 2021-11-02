@@ -15,6 +15,11 @@ fields as (
                 staging_columns=get_organic_tweet_report_columns()
             )
         }}
+
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='twitter_organic_union_schemas', 
+            union_database_variable='twitter_organic_union_databases') 
+        }}
         
     from base
 ),
@@ -51,11 +56,8 @@ final as (
         video_views_100,
         video_views_25,
         video_views_50,
-        video_views_75
-        {{ fivetran_utils.source_relation(
-            union_schema_variable='twitter_organic_union_schemas', 
-            union_database_variable='twitter_organic_union_databases') 
-        }}
+        video_views_75,
+        source_relation
     from fields
 )
 
