@@ -37,6 +37,15 @@ final as (
         screen_name as user_screen_name,
         source_relation
     from fields
+),
+
+is_most_recent as (
+
+    select
+        *,
+        row_number() over (partition by user_id, source_relation order by _fivetran_synced desc) = 1 as is_most_recent_record
+    from final
+
 )
 
-select * from final
+select * from is_most_recent
