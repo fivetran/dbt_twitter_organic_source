@@ -7,3 +7,4 @@ vars:
   account_history: "{{ source('twitter_organic','account_history') }}"
   organic_tweet_report: "{{ source('twitter_organic','organic_tweet_report') }}"
   tweet: "{{ source('twitter_organic','tweet') }}"
+  twitter_user_history: "{{ source('twitter_organic','twitter_user_history') }}"

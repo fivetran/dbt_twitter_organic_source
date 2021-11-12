@@ -10,3 +10,4 @@ sources:
       - name: account_history
       - name: organic_tweet_report
       - name: tweet
+      - name: twitter_user_history
