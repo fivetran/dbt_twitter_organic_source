@@ -40,7 +40,7 @@ final as (
         geo_coordinates,
         geo_type,
         id as organic_tweet_id,
-        {{ dbt_utils.concat(["'https://twitter.com/palceholder/status/'", 'id']) }} as post_url,
+        {{ dbt_utils.concat(["'https://twitter.com/p/status/'", 'id']) }} as post_url,
         in_reply_to_screen_name,
         in_reply_to_status_id,
         in_reply_to_user_id,
