@@ -92,6 +92,8 @@ models:
         description: Total number of views where at least 50% of the video was viewed.
       - name: video_views_75
         description: Total number of views where at least 75% of the video was viewed.
+      - name: source_relation
+        description: The source of the record, if the unioning functionality is being used.
 
   - name: stg_twitter_organic__tweet
     description: Each record represents a tweet in Twitter
