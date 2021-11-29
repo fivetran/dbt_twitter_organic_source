@@ -190,4 +190,4 @@ models:
       - name: source_relation
         description: The source of the record, if the unioning functionality is being used.
       - name: is_most_recent_record
-        description: Whether this is the most recent record for the user
+        description: Whether this is the most recent record for the user 
