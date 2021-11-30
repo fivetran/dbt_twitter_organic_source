@@ -8,6 +8,7 @@ models:
           combination_of_columns:
             - account_id
             - updated_timestamp
+            - source_relation
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
@@ -48,6 +49,7 @@ models:
             - account_id
             - organic_tweet_id
             - date_day
+            - source_relation
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
@@ -114,6 +116,11 @@ models:
 
   - name: stg_twitter_organic__tweet
     description: Each record represents a tweet in Twitter
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - organic_tweet_id
+            - source_relation
     columns: 
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
@@ -136,7 +143,6 @@ models:
       - name: organic_tweet_id
         description: The ID of the tweet in Twitter
         tests:
-          - unique
           - not_null
       - name: post_url
         description: URL of the tweet
@@ -167,6 +173,11 @@ models:
 
   - name: stg_twitter_organic__twitter_user_history
     description: Each record represents a version of a Twitter user.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - user_id
+            - source_relation
     columns:
       - name: _fivetran_synced
         description: "{{ doc('_fivetran_synced') }}"
@@ -179,7 +190,6 @@ models:
       - name: user_id
         description: The ID of the user in Twitter
         tests:
-          - unique
           - not_null
       - name: user_location
         description: The location of the user's account
