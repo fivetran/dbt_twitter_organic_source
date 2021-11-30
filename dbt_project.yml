@@ -8,3 +8,10 @@ vars:
   organic_tweet_report: "{{ source('twitter_organic','organic_tweet_report') }}"
   tweet: "{{ source('twitter_organic','tweet') }}"
   twitter_user_history: "{{ source('twitter_organic','twitter_user_history') }}"
+
+models:
+  twitter_organic_source:
+    +schema: stg_twitter_organic
+    +materialized: view
+    tmp:
+      +materialized: view
