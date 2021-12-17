@@ -14,4 +14,4 @@ models:
     +schema: stg_twitter_organic
     +materialized: view
     tmp:
-      +materialized: view
+      +materialized: table

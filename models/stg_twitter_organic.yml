@@ -38,8 +38,6 @@ models:
         description: Date and time when the account was last updated
       - name: source_relation
         description: The source of the record, if the unioning functionality is being used.
-      - name: is_most_recent_record
-        description: Whether this is the most recent record for the account
 
   - name: stg_twitter_organic__organic_tweet_report
     description: Each record represents metrics about a tweet on a specific date.
@@ -199,5 +197,3 @@ models:
         description: The screen name of the user
       - name: source_relation
         description: The source of the record, if the unioning functionality is being used.
-      - name: is_most_recent_record
-        description: Whether this is the most recent record for the user 
