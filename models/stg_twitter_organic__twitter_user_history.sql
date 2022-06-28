@@ -31,7 +31,7 @@ final as (
         created_at as created_timestamp,
         description as user_description,
         followers_count,
-        id as user_id,
+        cast(id as {{ dbt_utils.type_bigint() }}) as user_id,
         location as user_location,
         name as user_name,
         screen_name as user_screen_name,
