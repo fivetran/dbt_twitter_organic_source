@@ -51,7 +51,7 @@ final as (
         source,
         truncated,
         tweet_type,
-        cast(user_id as {{ dbt_utils.type_int() }}) as user_id,
+        cast(user_id as {{ dbt_utils.type_bigint() }}) as user_id,
         source_relation
     from fields
 )
