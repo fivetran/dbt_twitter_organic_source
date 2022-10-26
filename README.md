@@ -81,7 +81,7 @@ This dbt package is dependent on the following dbt packages. Please be aware tha
 ```yml
 packages:
     - package: fivetran/dbt_twitter_organic_source
-      version: [">=0.6.0", "<0.7.0"]
+      version: [">=0.2.0", "<0.3.0"]
 
     - package: fivetran/fivetran_utils
       version: [">=0.4.0", "<0.5.0"]
