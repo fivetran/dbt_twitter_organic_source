@@ -35,7 +35,7 @@ final as (
         location as user_location,
         name as user_name,
         screen_name as user_screen_name,
-        source_relation
+        cast(source_relation as {{ dbt.type_string() }}) as source_relation
     from fields
 )
 
