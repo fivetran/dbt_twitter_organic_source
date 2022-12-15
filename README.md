@@ -1,6 +1,6 @@
 <p align="center">
     <a alt="License"
-        href="https://github.com/fivetran/dbt_netsuite/blob/main/LICENSE">
+        href="https://github.com/fivetran/dbt_twitter_organic_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
     <a alt="dbt-core">
         <img src="https://img.shields.io/badge/dbt_Core™_version->=1.3.0_,<2.0.0-orange.svg" /></a>
@@ -25,6 +25,14 @@
 To use this dbt package, you must have the following:
 - A Fivetran Twitter Organic connector syncing data into your destination. 
 - A **BigQuery**, **Snowflake**, **Redshift**, **PostgreSQL**, or **Databricks** destination.
+
+### Databricks Additional Configuration
+If you are using a Databricks destination with this package you will need to add the below (or a variation of the below) dispatch configuration within your root `dbt_project.yml`. This is required in order for the package to accurately search for macros within the `dbt-labs/spark_utils` then the `dbt-labs/dbt_utils` packages respectively.
+```yml
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['spark_utils', 'dbt_utils']
+```
 
 ## Step 2: Install the package
 Include the following twitter_organic_source package version in your `packages.yml` file **only if you are NOT also installing the [Twitter Organic transformation package](https://github.com/fivetran/dbt_twitter_organic_source)**. The transform package has a dependency on this source package.
@@ -81,14 +89,6 @@ vars:
     ##OR you may set EITHER the databases variables below
     twitter_organic_union_databases: ['twitter_organic_one','twitter_organic_two']
 ```
-
-### Databricks Additional Configuration
-If you are using a Databricks destination with this package you will need to add the below (or a variation of the below) dispatch configuration within your root `dbt_project.yml`. This is required in order for the package to accurately search for macros within the `dbt-labs/spark_utils` then the `dbt-labs/dbt_utils` packages respectively.
-```yml
-dispatch:
-  - macro_namespace: dbt_utils
-    search_order: ['spark_utils', 'dbt_utils']
-```
 </details>
 
 # (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
@@ -108,6 +108,9 @@ packages:
 
     - package: dbt-labs/dbt_utils
       version: [">=1.0.0", "<2.0.0"]
+
+    - package: dbt-labs/spark_utils
+      version: [">=0.3.0", "<0.4.0"]
 ```
 
 # 🙌 How is this package maintained and can I contribute?
