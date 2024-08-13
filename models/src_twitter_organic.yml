@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: twitter_organic
-    schema: "{{ var('twitter_organic_schema', 'twitter_organic') }}"
+  - name: twitter
+    schema: "{{ var('twitter_organic_schema', 'twitter') }}"
     database: "{% if target.type != 'spark'%}{{ var('twitter_organic_database', target.database) }}{% endif %}"
     loader: Fivetran
     loaded_at_field: _fivetran_synced
