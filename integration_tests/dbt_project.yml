@@ -4,10 +4,10 @@ profile: 'integration_tests'
 config-version: 2
 vars:
   twitter_organic_source:
-    twitter_organic_account_history_identifer: "twitter_organic_account_history_data"
-    twitter_organic_organic_tweet_report_identifer: "twitter_organic_organic_tweet_report_data"
-    twitter_organic_tweet_identifer: "twitter_organic_tweet_data"
-    twitter_organic_twitter_user_history_identifer: "twitter_organic_twitter_user_history_data"
+    twitter_account_history_identifer: "twitter_organic_account_history_data"
+    twitter_organic_tweet_report_identifer: "twitter_organic_organic_tweet_report_data"
+    twitter_tweet_identifer: "twitter_organic_tweet_data"
+    twitter_twitter_user_history_identifer: "twitter_organic_twitter_user_history_data"
     twitter_organic_schema: twitter_organic_source_integration_tests
 seeds:
   twitter_organic_source_integration_tests:
