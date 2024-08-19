@@ -27,6 +27,7 @@
 
 ## Under the Hood:
 - All tmp models have been updated to reference the new source name `twitter` (previously `twitter_organic`). ([#12](https://github.com/fivetran/dbt_twitter_organic_source/pull/12))
+- Renamed the seed files to allow for more testing functionality. ([#12](https://github.com/fivetran/dbt_twitter_organic_source/pull/12))
 - Included auto-releaser GitHub Actions workflow to automate future releases. ([#12](https://github.com/fivetran/dbt_twitter_organic_source/pull/12))
 - Updated the maintainer PR, Issue, Feature Request, and Config templates to resemble the most up to date format. ([#12](https://github.com/fivetran/dbt_twitter_organic_source/pull/12))
 - Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job. ([#9](https://github.com/fivetran/dbt_twitter_organic_source/pull/9))
