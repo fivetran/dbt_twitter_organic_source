@@ -72,7 +72,7 @@ If an individual source table has a different name than the package expects, add
     
 ```yml
 vars:
-    twitter_organic_<default_source_table_name>_identifier: your_table_name 
+    twitter_<default_source_table_name>_identifier: your_table_name 
 ```
 
 ### Unioning Multiple Twitter Organic Connectors
