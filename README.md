@@ -41,7 +41,7 @@ Include the following twitter_organic_source package version in your `packages.y
 ```yaml
 packages:
   - package: fivetran/twitter_organic_source
-    version: [">=0.2.0", "<0.3.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.3.0", "<0.4.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 ## Step 3: Define database and schema variables
