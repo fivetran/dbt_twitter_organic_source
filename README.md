@@ -41,11 +41,11 @@ Include the following twitter_organic_source package version in your `packages.y
 ```yaml
 packages:
   - package: fivetran/twitter_organic_source
-    version: [">=0.2.0", "<0.3.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.3.0", "<0.4.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 
 ## Step 3: Define database and schema variables
-By default, this package will look for your Twitter Organic data in the `twitter_organic` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Twitter Organic data is, please add the following configuration to your `dbt_project.yml` file:
+By default, this package will look for your Twitter Organic data in the `twitter` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Twitter Organic data is, please add the following configuration to your `dbt_project.yml` file:
 
 ```yml  
 vars:
@@ -54,7 +54,7 @@ vars:
 ```
 
 ## (Optional) Step 4: Additional Configurations
-<details><summary>Expand for configurations</summary>
+<details open><summary>Expand for configurations</summary>
 
 ### Changing the Build Schema
 
@@ -72,7 +72,7 @@ If an individual source table has a different name than the package expects, add
     
 ```yml
 vars:
-    twitter_organic_<default_source_table_name>_identifier: your_table_name 
+    twitter_<default_source_table_name>_identifier: your_table_name 
 ```
 
 ### Unioning Multiple Twitter Organic Connectors

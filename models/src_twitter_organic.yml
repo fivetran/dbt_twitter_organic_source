@@ -1,14 +1,14 @@
 version: 2
 
 sources:
-  - name: twitter_organic
-    schema: "{{ var('twitter_organic_schema', 'twitter_organic') }}"
+  - name: twitter
+    schema: "{{ var('twitter_organic_schema', 'twitter') }}"
     database: "{% if target.type != 'spark'%}{{ var('twitter_organic_database', target.database) }}{% endif %}"
     loader: Fivetran
     loaded_at_field: _fivetran_synced
     tables:
       - name: account_history
-        identifier: "{{ var('twitter_organic_account_history_identifer', 'account_history')}}"
+        identifier: "{{ var('twitter_account_history_identifier', 'account_history')}}"
         description: Each record represents a version of a Twitter ad account.
         columns:
           - name: _fivetran_synced
@@ -36,7 +36,7 @@ sources:
           - name: updated_at
             description: Date and time when the account was last updated
       - name: organic_tweet_report
-        identifier: "{{ var('twitter_organic_organic_tweet_report_identifer', 'organic_tweet_report')}}"
+        identifier: "{{ var('twitter_organic_tweet_report_identifier', 'organic_tweet_report')}}"
         description: Each record represents metrics about a tweet on a specific date.
         columns:
           - name: _fivetran_synced
@@ -96,7 +96,7 @@ sources:
           - name: video_views_75
             description: Total number of views where at least 75% of the video was viewed.
       - name: tweet
-        identifier: "{{ var('twitter_organic_tweet_identifer', 'tweet')}}"  
+        identifier: "{{ var('twitter_tweet_identifier', 'tweet')}}"  
         description: Each record represents a tweet in Twitter
         columns:
           - name: _fivetran_synced
@@ -140,7 +140,7 @@ sources:
           - name: user_id
             description: The ID of the user who tweeted the tweet
       - name: twitter_user_history
-        identifier: "{{ var('twitter_organic_twitter_user_history_identifer', 'twitter_user_history')}}"  
+        identifier: "{{ var('twitter_twitter_user_history_identifier', 'twitter_user_history')}}"  
         description: Each record represents a version of a Twitter user.
         columns:
           - name: _fivetran_synced
