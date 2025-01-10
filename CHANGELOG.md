@@ -1,3 +1,8 @@
+# dbt_twitter_organic_source version.version
+
+## Documentation
+- Corrected references to connectors and connections in the README. ([#15](https://github.com/fivetran/dbt_twitter_organic_source/pull/15))
+
 # dbt_twitter_organic_source v0.3.0
 
 ## Breaking Change
