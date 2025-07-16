@@ -1,4 +1,7 @@
-<p align="center">
+
+# Twitter Organic Source dbt Package ([Docs](https://fivetran.github.io/dbt_twitter_organic_source/))
+
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_twitter_organic_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -9,8 +12,6 @@
     <a alt="PRs">
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
-
-# Twitter Organic Source dbt Package ([Docs](https://fivetran.github.io/dbt_twitter_organic_source/))
 
 ## What does this dbt package do?
 - Materializes [Twitter Organic staging tables](https://fivetran.github.io/dbt_twitter_organic_source/#!/overview/twitter_organic_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/twitter#schemainformation). These staging tables clean, test, and prepare your Twitter Organic data from [Fivetran's connector](https://fivetran.com/docs/applications/twitter) for analysis by doing the following:
@@ -69,7 +70,7 @@ models:
 #### Change the source table references
 If an individual source table has a different name than the package expects, add the table name as it appears in your destination to the respective variable:
 > IMPORTANT: See this project's [`dbt_project.yml`](https://github.com/fivetran/dbt_twitter_organic_source/blob/main/dbt_project.yml) variable declarations to see the expected names.
-    
+
 ```yml
 vars:
     twitter_<default_source_table_name>_identifier: your_table_name 
@@ -101,7 +102,7 @@ Fivetran offers the ability for you to orchestrate your dbt project through the 
 ## Does this package have dependencies?
 This dbt package is dependent on the following dbt packages. These dependencies are installed by default within this package. For more information on the following packages, refer to the [dbt hub](https://hub.getdbt.com/) site.
 > IMPORTANT: If you have any of these dependent packages in your own `packages.yml` file, we highly recommend that you remove them from your root `packages.yml` to avoid package version conflicts.
-    
+
 ```yml
 packages: 
     - package: fivetran/fivetran_utils

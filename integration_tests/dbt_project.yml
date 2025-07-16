@@ -10,6 +10,8 @@ vars:
     twitter_twitter_user_history_identifier: "twitter_user_history"
     twitter_organic_schema: twitter_organic_source_integration_tests
 seeds:
+  +docs:
+    show: False
   twitter_organic_source_integration_tests:
     tweet:
       +column_types:
@@ -17,3 +19,7 @@ seeds:
     organic_tweet_report:
       +column_types:
         organic_tweet_id: "{{ 'int64' if target.type == 'bigquery' else 'bigint' }}"
+
+flags:
+  send_anonymous_usage_stats: False
+  use_colors: True
