@@ -1,8 +1,8 @@
-# [DEPRECATED] Twitter_organic Source dbt Package
+# [DEPRECATED] Twitter Organic Source dbt Package
 
 > _This package has been archived and is no longer maintained. Use [`dbt_twitter_organic`](https://github.com/fivetran/dbt_twitter_organic) instead, which now contains all models previously found here._
 
-<p align="center">
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_twitter_organic_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -13,8 +13,6 @@
     <a alt="PRs">
         <img src="https://img.shields.io/badge/Contributions-closed-blueviolet" /></a>
 </p>
-
-# Twitter Organic Source dbt Package ([Docs](https://fivetran.github.io/dbt_twitter_organic_source/))
 
 ## What does this dbt package do?
 - Materializes [Twitter Organic staging tables](https://fivetran.github.io/dbt_twitter_organic_source/#!/overview/twitter_organic_source/models/?g_v=1) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/twitter#schemainformation). These staging tables clean, test, and prepare your Twitter Organic data from [Fivetran's connector](https://fivetran.com/docs/applications/twitter) for analysis by doing the following:
